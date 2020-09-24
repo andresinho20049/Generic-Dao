@@ -1,5 +1,8 @@
 package com.andre.apirest.genericdao.models;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Endereco {
 
 	private String logradouro;
