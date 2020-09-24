@@ -1,12 +1,31 @@
 package com.andre.apirest.genericdao.models;
 
-public class Endereco {
+import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
+@Embeddable
+public class Endereco implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	@Column(length = 50, nullable = false)
 	private String logradouro;
+	
+	@Column(length = 10, nullable = false)
 	private Integer numero;
+	
+	@Column(length = 50, nullable = false)
 	private String bairro;
+
+	@Column(length = 50, nullable = false)
 	private String municipio;
+
+	@Column(length = 2, nullable = false)
 	private String uf;
+
+	@Column(length = 8, nullable = false)
 	private Integer cep;
 
 	public String getLogradouro() {
