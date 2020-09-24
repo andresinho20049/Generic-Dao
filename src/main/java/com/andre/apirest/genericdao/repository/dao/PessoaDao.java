@@ -1,7 +1,11 @@
 package com.andre.apirest.genericdao.repository.dao;
 
-import com.andre.apirest.genericdao.models.Pessoa;
+import org.springframework.stereotype.Repository;
 
-public class PessoaDao extends GenericDao<Pessoa> {
+import com.andre.apirest.genericdao.models.Pessoa;
+import com.andre.apirest.genericdao.repository.PessoaRepository;
+
+@Repository
+public class PessoaDao extends GenericDao<Pessoa> implements PessoaRepository{
 
 }

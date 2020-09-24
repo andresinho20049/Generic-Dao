@@ -11,40 +11,42 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.andre.apirest.genericdao.models.Pessoa;
-import com.andre.apirest.genericdao.repository.dao.PessoaDao;
+import com.andre.apirest.genericdao.repository.PessoaRepository;
 
 @RestController
+@RequestMapping(value = "/api")
 public class PessoaController {
 	
 	@Autowired
-	PessoaDao pessoaDao;
+	PessoaRepository pessoaRepository;
 	
 	@GetMapping("/pessoas")
-	public List<Pessoa> listaProdutos(){
-		return pessoaDao.findAll();
+	public List<Pessoa> findAll(){
+		return pessoaRepository.findAll();
 	}
 	
 	@GetMapping("/pessoas/{id}")
-	public Pessoa listaProdutoUnico(@PathVariable(value="id") Integer id){
-		return pessoaDao.findById(id);
+	public Pessoa findById(@PathVariable(value="id") Integer id){
+		return pessoaRepository.findById(id);
 	}
 	
 	@PostMapping("/pessoas")
-	public void salvaProduto(@RequestBody @Valid Pessoa pessoa) {
-		pessoaDao.save(pessoa);
+	public void save(@RequestBody @Valid Pessoa pessoa) {
+		pessoaRepository.save(pessoa);
 	}
 	
 	@DeleteMapping("/pessoas")
-	public void deletaProduto(@RequestBody @Valid Pessoa pessoa) {
-		pessoaDao.delete(pessoa);
+	public void delete(@RequestBody @Valid Pessoa pessoa) {
+		pessoaRepository.delete(pessoa);
 	}
 	
 	@PutMapping("/pessoas")
-	public void atualizaProduto(@RequestBody @Valid Pessoa pessoa) {
-		pessoaDao.save(pessoa);
+	public void update(@RequestBody @Valid Pessoa pessoa) {
+		pessoaRepository.update(pessoa);
 	}
 	
 
