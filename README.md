@@ -38,14 +38,16 @@ Tecnologia utilizada: Java 8 + Spring boot + Rest
     	@Temporal(TemporalType.DATE)
     	@Column(nullable = false)
     	private Date data_nascimento;
+    	
     	@Embedded
     	private Endereco endereco;
     	
     	@OneToMany(cascade=CascadeType.ALL)
     	@JoinColumn(name="pessoa_id", referencedColumnName="id")
+	    private List<Telefone> telefone;
     ```
 - Tabela Pessoa  
-    ```
+    ```cmd
     +-----------------+--------------+------+-----+---------+----------------+
     | Field           | Type         | Null | Key | Default | Extra          |
     +-----------------+--------------+------+-----+---------+----------------+
@@ -62,7 +64,7 @@ Tecnologia utilizada: Java 8 + Spring boot + Rest
     +-----------------+--------------+------+-----+---------+----------------+
     ```
 - Tabela Telefone  
-    ```
+    ```cmd
     +-----------+------------+------+-----+---------+----------------+
     | Field     | Type       | Null | Key | Default | Extra          |
     +-----------+------------+------+-----+---------+----------------+
