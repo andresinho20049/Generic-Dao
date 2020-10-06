@@ -121,6 +121,8 @@ Com intuito de padronizar as implementações de ORM em Java, foi elaborada a es
 
 No JPA, as classes Java que representam os dados a serem armazenados no SGBD são chamadas de Entidades (Entity). O que torna essa classe uma entidade é a presença da anotação (Annotation) `@javax.persistence.Entity`. Tal anotação faz com que o JPA associe a classe Java em questão a uma tabela do banco de dados.
 
+[![Run on Repl.it](https://repl.it/badge/github/andresinho20049/Generic-Dao)](https://repl.it/github/andresinho20049/Generic-Dao)
+
 > **Projeto:** API Rest GenericDAO      
 > **Autor:** André Carlos [(andresinho20049)](https://github.com/andresinho20049)       
 > **Resumo:** Projeto desenvolvido para fins academicos com intuito de estudar sobre *ORM*
